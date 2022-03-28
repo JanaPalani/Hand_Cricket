@@ -1,25 +1,4 @@
-# def fibonici(n):
-#     if n==0:
-#         return 0        
-#     elif n==1: 
-#         return 1
-#     else:
-#         return fibonici(n-1)+fibonici(n-2)
-# n=int(input("enter the number of elements to be printed in fibonicci series "))
-# for i in range(0,n):
-#         print(fibonici(i))
 
-# import math 
-# def square(c):
-#     s=int(math.sqrt(c))
-#     return s*s==c
-# def check(n):
-#     if square((5*(n**2)-4)) or square((5*(n**2)+4)):
-#         return f'the number {n} is in the fibonicci series'
-#     else:
-#         return f'the number {n} is not in the fibonicci series '
-# v=check(112388)
-# print(v)
 import random
 
 print("you are even and and the computer is odd")
