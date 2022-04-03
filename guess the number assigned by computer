@@ -15,5 +15,5 @@ for i in range(chance):
         else:
             print("lower value")
 
-print("you lost all yoy chances")
+print("you lost all yor chances")
         
