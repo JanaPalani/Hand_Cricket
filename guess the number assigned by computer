@@ -1,0 +1,19 @@
+import random
+
+a=random.randint(1,100)
+chance=10
+for i in range(chance):
+    n=int(input("guess the value"))
+    if n == a:
+        print(f'you found the number correct number and it is {n}')
+        break       
+    else:
+        if abs(n-a)<=10 :
+            print("Getting close")
+        elif n>a:
+            print("higher value")
+        else:
+            print("lower value")
+
+print("you lost all yoy chances")
+        
