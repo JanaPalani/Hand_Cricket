@@ -1,12 +1,24 @@
 
 import random
 
-print("you are even and and the computer is odd")
-b=random.randint(1,10)
-c=int(input("enter a number between 1 and 10 for toss :"))
+print("now its the time for toss ")
+c=int(input("1 for odd and 2 for even : "))
+while True:
+    if c== 1:
+        print("your choice is odd")
+        break
+    elif c == 2:
+        print('youe choice is even')
+        break
+    else:
+        print("pls select the coice 1 or 2")
+
+toss_you=int(input("enter the value between 1 and 10 : "))
+toss_comp=random.randint(1,10)
+
 
             
-def you_bowl(): 
+def you_1stbowl(): 
     score=0
     guessed_crct=False
     while not guessed_crct:
@@ -14,7 +26,7 @@ def you_bowl():
         a=int(input('put the number between 1 and 6: '))
         if a<=6 and a>=1:
             if a == n:
-                if a ==0:
+                if score ==0:
                     print("the computer is duck out ")
                 guessed_crct=True
                 print (f" the computer's final run is :{score}")
@@ -24,7 +36,7 @@ def you_bowl():
                 score+=n
                 print(f" the computer's current run is :{score}")
         else:
-            print("invalid number pls enetr the vale between 1 to 6")
+            print("invalid number please enetr the vale between 1 to 6")
     print("now its your chance to bat ")
     run=0
     guessed_crct= False
@@ -33,7 +45,7 @@ def you_bowl():
         a=int(input("put the number between 1 and 6 : "))
         if a<=6 and a>=1:
             if a == n:
-                if a==0:
+                if run==0:
                     print(" you are duck out and the computer won the match")
                 guessed_crct=True
                 print(f'your run is {run}') 
@@ -47,20 +59,20 @@ def you_bowl():
             elif run == score:
                 print(f"now both the scores are equal score 1 more run to win the match")
         else:
-            print("invalid number pls enetr the vale between 1 to 6")
+            print("invalid number please enetr the vale between 1 to 6")
              
 
 
-def you_bat():
+def you_1stbat():
     run=0
-    guessed_crct= False
-    while not guessed_crct:
+    guessed_crct= True
+    while  guessed_crct:
         n=random.randint(1,6)
         a=int(input("put the number between 1 and 6 : "))
         if a>=1 and a<=6:
             if a == n:
-                guessed_crct=True
-                if a==0:
+                guessed_crct=False
+                if run==0:
                     print("you are duck out ")
                 print(f'your run is {run}')
                 comp_tar=run+1
@@ -69,7 +81,7 @@ def you_bat():
                 run += a
                 print(f"the current score is {run}")
         else:
-            print("invalid number pls enetr the vale between 1 to 6")
+            print("invalid number please enter  the value between 1 and 6")
     print("now its computer chance to bat ")
     print("get ready for bowling")
     score=0
@@ -80,7 +92,7 @@ def you_bat():
         if a>=1 and a<=6:
             if a == n:
                 guessed_crct=True
-                if a==0:
+                if score==0:
                     print("the computer is duck out and you won the match ")
                 print(f' the computer run  is {score}') 
                 print("you won the match ")
@@ -95,31 +107,52 @@ def you_bat():
         else:
             print("entered number is invalid please enter between 1 and 6")
              
+if c== 2:
+    if (toss_you+toss_comp)%2 == 0:
+        choice = int(input(" its even ,enter your choice 1 -batting ,2- bowling: "))
+        print()
+        if choice == 1:
+            print("you are batting, the computer is bowling")
+            you_1stbat()
+            
+        elif choice ==2 :
+            print("you are bowling, the computer is batting  ")
+            you_1stbowl()
+        else:
+            print('invalid choice please chose 1 or 2')
 
-if (b+c)%2==0:
-    choice = int(input(" enter your choice 1 -batting ,2- bowling: "))
-    print()
-    if choice == 1:
-        print("you are batting, the computer is bowling")
-        you_bat()
-        
-    elif choice ==2 :
-        print("you are bowling, the computer is batting  ")
-        you_bowl()
     else:
-        print('invalid choice pls chose 1 or 2')
+        choice = random.randint(1,2)
+        print(" oh its odd ")
+        if choice == 1:
+            print('you are bowling ,the computer is batting ')
+            you_1stbowl()
+        else:
+            print('you are batting , and the computer is bowling')
+            you_1stbat()
 
+elif c== 1:
+    if (toss_you+toss_comp)%2 !=0:
+        choice = int(input(" its odd ,enter your choice 1 -batting ,2- bowling: "))
+        print()
+        if choice == 1:
+            print("you are batting, the computer is bowling")
+            you_1stbat()
+            
+        elif choice ==2 :
+            print("you are bowling, the computer is batting  ")
+            you_1stbowl()
+        else:
+            print('invalid choice please chose 1 or 2')
+    else:
+        print('its even')
+        choice = random.randint(1,2)
+        if choice == 1:
+            print('you are bowling ,the computer is batting ')
+            you_1stbowl()
+        else:
+            print('you are batting , and the computer is bowling')
+            you_1stbat()
+        
 else:
-    choice = random.randint(1,2)
-    print()
-    if choice == 1:
-        print('you are bowling ,the computer is batting ')
-        you_bowl()
-    else:
-        print('you are batting , and the computer is bowling')
-        you_bat()
-        
-
-
-
-    
+    print(" the choice is in valid please select 1 or 2 only")
